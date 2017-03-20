@@ -1,3 +1,5 @@
+PATH="$HOME/Library/Haskell/bin:$PATH"
+
 reset="%{${reset_color}%}"
 white="%{$fg[white]%}"
 gray="%{$fg_bold[black]%}"
@@ -33,6 +35,8 @@ alias vi='vim'
 alias ag='ag --ignore-dir=node_modules --ignore-dir=bower_components --ignore-dir=tmp --ignore-dir=dist --ignore-dir=vendor --ignore-dir=.git'
 alias startdb='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stopdb='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+
+if [ "$TMUX" = "" ]; then tmux; fi
 
 [ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
