@@ -35,6 +35,8 @@ alias ag='ag --ignore-dir=node_modules --ignore-dir=bower_components --ignore-di
 alias startdb='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stopdb='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
+export NODE_ENV="development"
+
 if [ "$TMUX" = "" ]; then tmux; fi
 
 [ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
