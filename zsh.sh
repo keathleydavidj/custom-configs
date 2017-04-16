@@ -42,3 +42,21 @@ if [ "$TMUX" = "" ]; then tmux; fi
 
 [ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+cd_nvm_use() {
+  if [[ -a ".nvmrc" ]]; then
+    NODE_VERSION=$(nvm version)
+    NVM_VERSION=$(nvm version $(cat ".nvmrc"))
+    if [ $NODE_VERSION != $NVM_VERSION ]; then
+      nvm use
+    fi
+  fi
+}
+
+cd() {
+  builtin cd "$@"
+  unset NODE_NAME
+  cd_nvm_use
+  workon_virtualenv
+  workon_node_env
+}
