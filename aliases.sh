@@ -1,6 +1,0 @@
-alias "cp=rsync -avz"
-alias "npmc=git clean -xfd && npm cache clean && bower cache clean"
-alias "devcp=cp ~/work/dev.js ./q2-uux/public/"
-alias "yombom=npmc && yarn install && devcp && grunt prereq"
-alias "nombom=npmc && npm install && devcp && grunt prereq"
-alias "ngaminstall=npm install && cd q2-app/ && npm install && bower install && cd ../q2-uux/ && npm install && bower install && cd .."
